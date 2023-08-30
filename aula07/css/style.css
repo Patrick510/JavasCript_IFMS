@@ -1,0 +1,74 @@
+* {
+  margin: 0px;
+}
+
+body {
+  margin: 2%;
+  background-color: #fafbfc;
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.dados {
+  margin-top: 5px;
+  display: grid;
+  margin-bottom: 5px;
+}
+
+input {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: 0;
+  padding: 10px;
+}
+
+button {
+  border: 0;
+  padding: 7px;
+  outline: 0;
+  background-color: #ccc;
+  border-radius: 3px;
+  font-weight: bold;
+  transition: all ease 0.3s;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+button:hover {
+  background-color: #a1a1a1;
+}
+
+#tabela div {
+  display: inline-block;
+  border: 1px gray solid;
+  border-radius: 3px;
+}
+
+#tabela {
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 3px;
+}
+
+table th {
+  background-color: #d6d5d5;
+}
+
+.center {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

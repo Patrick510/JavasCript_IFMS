@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="javascript/script.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  <title>Formulário</title>
+</head>
+
+<body>
+  <h2>Contato</h2>
+
+  <div class="card">
+    <div class="dados">
+      <label>Nome</label>
+      <input placeholder="Digite seu nome" type="text" name="nome" id="nome">
+    </div>
+
+    <div class="dados">
+      <label>Celular</label>
+      <input placeholder="(xx) xxxxx-xxxx" type="number" name="celular" id="fone">
+    </div>
+
+    <button class="botao" type="submit" onclick="enviar()"> Salvar </button>
+
+    <div id="tabela">
+      <table id="bdContato" border="1">
+        <thead>
+          <th> ID </th>
+          <th> NOME </th>
+          <th> CELULAR </th>
+          <th> AÇOES </th>
+        </thead>
+
+        <tbody id="tbody">
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
