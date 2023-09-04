@@ -1,13 +1,16 @@
-var num = [10];
 var soma = 0;
-var i = 1;
+var num = [];
 
-while (i > 0) {
-  num = window.prompt("entre com um valor");
-  soma = num[i] + i;
-  console.log(num);
-  if (i == 0) {
+while (true) {
+  var valor = parseInt(window.prompt("Entre com um valor (0 para sair)"));
+
+  if (valor === 0) {
     break;
   }
+
+  num.push(valor);
+  console.log(num);
 }
+soma += num.reduce((acumulator, valor) => acumulator + valor, 0);
+
 console.log(soma);
