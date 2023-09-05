@@ -1,2 +1,1 @@
-Soma de Números Pares: Escreva um programa que calcule a soma de todos os números
-pares de 1 a N, onde N é um número fornecido pelo usuário.
+Tabuada: Escreva um programa que exiba a tabuada de um número fornecido pelo usuário.
