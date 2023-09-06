@@ -1,18 +1,43 @@
 var soma = 0;
 var num = [];
+var i = 0;
+var mediaval;
 
-while (true) {
-  var valor = parseInt(window.prompt("Entre com um valor (0 para sair)"));
-
-  if (valor % 2 == 0) {
-    num.push(valor);
-    console.log(num);
-  }
-  if (valor === 0) {
-    break;
-  }
+function envia() {
+  mais_linha();
+  clear();
 }
-soma += num.reduce((acumulator, valor) => acumulator + valor, 0);
 
-console.log(soma);
-document.write("A soma dos numeros pares é: ", soma);
+function mais_linha() {
+  var valor = parseInt(document.getElementById("number").value);
+  num.push(valor);
+  console.log(num);
+  i += 1;
+  console.log("qnt", i);
+
+  soma += num.reduce((acumulator, valor) => acumulator + valor, 0);
+
+  var paragrafo = document.createElement("p");
+  paragrafo.innerHTML = `Valor ${i} recebe ${valor}`;
+
+  document.body.appendChild(paragrafo);
+}
+
+function clear() {
+  document.getElementById("number").value = "";
+}
+
+function media() {
+  console.log("soma:", this.soma);
+  console.log("valor", this.i);
+  mediaval = parseInt(this.soma / this.i);
+  console.log("media", mediaval);
+  var paragradom = document.createElement("p");
+
+  paragradom.innerHTML = `A média dos ${this.i} é ${mediaval}`;
+
+  document.body.appendChild(paragradom);
+
+  clear();
+  //  clear_tab();
+}
