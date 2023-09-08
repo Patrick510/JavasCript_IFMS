@@ -3,6 +3,7 @@
 var num;
 var i = 1;
 var soma = 0;
+var somimp = 0;
 
 function send() {
   num = document.getElementById("number").value;
@@ -11,13 +12,21 @@ function send() {
     if (i % 2 === 0) {
       soma += i;
       console.log(soma);
+    } else {
+      somimp += 1;
+      console.log(somimp);
     }
   }
-  console.log("a soma é:", soma);
+  console.log("a soma par é:", soma);
+  console.log("a soma imp é:", somimp);
 
   var paragrafo = document.createElement("p");
+  var paragrafo2 = document.createElement("p");
 
   paragrafo.innerHTML = `A soma dos números pares de 1 até ${num} é: ${soma}`;
 
+  paragrafo2.innerHTML = `A soma dos números impares de 1 até ${num} é: ${somimp}`;
+
   document.body.appendChild(paragrafo);
+  document.body.appendChild(paragrafo2);
 }
