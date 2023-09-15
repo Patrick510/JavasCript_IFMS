@@ -7,29 +7,60 @@ body {
   background-color: #fafbfc;
 }
 
-.grid {
-  width: 50%;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  padding: 15px;
+.box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #fff;
-  border: 1px solid #ccc;
+  padding: 15px;
   border-radius: 4px;
+  width: 20%;
+  border: 1px solid #ddd;
+}
+
+.box2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  width: 20%;
+  border: 1px solid #ddd;
   display: grid;
-  gap: 10px;
+}
+
+legend {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #fff;
+  padding: 5px;
 }
 
 .inp {
-  display: inline-block;
+  position: relative;
 }
 
-.send {
-  grid-column: 1;
-}
-
-h1 {
-  margin-top: 10px;
-  text-align: center;
+.input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  width: 100%;
   margin-bottom: 10px;
-  font-size: 32px;
+}
+
+.text {
+  position: absolute;
+  top: 0px;
+  left: 1px;
+  pointer-events: none;
+  color: #aaa;
+}
+
+table th {
+  border-bottom: 1px solid grey;
 }/*# sourceMappingURL=style.css.map */
