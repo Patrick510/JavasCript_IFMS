@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 10;
 }
 
 body {
@@ -8,20 +8,20 @@ body {
 
 div {
   background-color: #fff;
-  margin: 10px;
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
-form {
-  display: grid;
-  text-align: start;
-  padding-bottom: 5px;
-}
-
-form label {
+form label,
+input {
+  display: inline-block;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 form input {
