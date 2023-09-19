@@ -20,7 +20,7 @@ function mais_linha() {
   var paragrafo = document.createElement("p");
   paragrafo.innerHTML = `Valor ${i} recebe ${valor}`;
 
-  document.body.appendChild(paragrafo);
+  document.table.appendChild(paragrafo);
 }
 
 function clear() {
