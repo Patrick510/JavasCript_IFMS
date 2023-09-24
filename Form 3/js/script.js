@@ -11,10 +11,20 @@ function sendContact() {
   };
 
   console.log(contact);
+  contacts = getLocalStorage();
   contacts.push(contact);
+  setLocalStorage(contacts);
 
   //  clearVal();
   updateTable();
+}
+
+function getLocalStorage() {
+  return JSON.parse(localStorage.getItem("b_contacts")) || [];
+}
+
+function setLocalStorage() {
+  localStorage.setItem("b_contacts", JSON.stringify(contacts));
 }
 
 function updateTable() {
@@ -25,20 +35,15 @@ function updateTable() {
     <td> ${this.contacts[i].id} </td>
     <td> ${this.contacts[i].name} </td>
     <td> ${this.contacts[i].number} </td>
-    <td> <input class="delete" type="button" value="Delete" onclick="deleteline(${this.contacts[i].id})"> </td>
+    <td> <input class="delete" type="button" value="Delete" onclick="deleteline(${index})"> </td>
     `;
   }
   document.querySelector(".thead").appendChild(tabela);
   // document.querySelector("#tbContacts>tbody").appendChild(line);
 }
 
-function deleteline(id) {
-  let tbody = document.getElementById("tr");
-
-  for (let i = 0; i < this.contacts.length; i++) {
-    if (this.contacts[i].id == id) {
-      this.contacts.splice(i, 1);
-      tbody.deleteRow(i);
-    }
-  }
+function deleteline(index) {
+  contacts = getLocalStorage();
+  contacts.splice(index, 1);
+  setLocalStorage(contacts);
 }
