@@ -85,11 +85,10 @@ body {
 }
 
 .weather-box img {
-  width: 60%;
-  margin-top: 30px;
+  width: 50%;
 }
 
-.weather-box .temperature {
+.weather-box #temperature {
   position: relative;
   color: #06283d;
   font-size: 4rem;
@@ -98,13 +97,13 @@ body {
   margin-left: -16px;
 }
 
-.weather-box .temperature span {
+.weather-box #temperature {
   position: absolute;
   margin-left: 4px;
   font-size: 1.5rem;
 }
 
-.weather-box .description {
+.weather-box #description {
   color: #06283d;
   font-size: 22px;
   font-weight: 500;

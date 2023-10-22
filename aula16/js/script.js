@@ -18,6 +18,7 @@ search.addEventListener("click", () => {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
+      console.log(json["main"]["temp"]);
       if (json.cod === "404") {
         container.style.height = "400px";
         weatherBox.style.display = "none";
@@ -27,17 +28,43 @@ search.addEventListener("click", () => {
         return;
       } else if (json.base === "stations") {
         const imagem = document.getElementById("imagem");
-        const temperatura = document.querySelector("temperature");
+        const temperature = document.getElementById("temperature");
+        const description = document.querySelector("description");
         if (json.weather[0].description === "overcast clouds") {
           imagem.src = "images/cloud.png";
-          imagem.style.width = "30%";
+          temperature.innerHTML = json["main"]["temp"];
           container.style.height = "400px";
           weatherBox.style.display = "none";
           weatherBox.style.display = "block";
           weatherBox.classList.add("fadeIn");
-
-          weatherBox.style.display = "none";
-          weatherBox.style.display = "block";
+        }
+        if (json.weather[0].description === "clear sky") {
+          imagem.src = "images/clear.png";
+          temperature.innerHTML = json["main"]["temp"];
+          console.log(dados["main"]);
+          container.style.height = "400px";
+          weatherDetail.classList.add("fadeIn");
+          weatherBox.classList.add("fadeIn");
+        }
+        if (json.weather[0].description === "few clouds") {
+          imagem.src = "images/clear.png";
+          temperature.innerHTML = json["main"]["temp"];
+          container.style.height = "400px";
+          weatherDetail.classList.add("fadeIn");
+          weatherBox.classList.add("fadeIn");
+        }
+        if (json.weather[0].description === "broken clouds") {
+          imagem.src = "images/clear.png";
+          temperature.innerHTML = json["main"]["temp"];
+          container.style.height = "400px";
+          weatherDetail.classList.add("fadeIn");
+          weatherBox.classList.add("fadeIn");
+        }
+        if (json.weather[0].description === "scattered clouds") {
+          imagem.src = "images/clear.png";
+          temperature.innerHTML = json["main"]["temp"];
+          container.style.height = "400px";
+          weatherDetail.classList.add("fadeIn");
           weatherBox.classList.add("fadeIn");
         }
       }
