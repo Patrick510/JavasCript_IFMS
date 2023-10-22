@@ -18,6 +18,7 @@ search.addEventListener("click", () => {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
+      console.log(json.weather[0].description);
       console.log(json["main"]["temp"]);
       if (json.cod === "404") {
         container.style.height = "400px";
@@ -29,7 +30,8 @@ search.addEventListener("click", () => {
       } else if (json.base === "stations") {
         const imagem = document.getElementById("imagem");
         const temperature = document.getElementById("temperature");
-        const description = document.querySelector("description");
+        const description = document.getElementById("description");
+
         if (json.weather[0].description === "overcast clouds") {
           imagem.src = "images/cloud.png";
           temperature.innerHTML = json["main"]["temp"];
@@ -62,7 +64,7 @@ search.addEventListener("click", () => {
         }
         if (json.weather[0].description === "scattered clouds") {
           imagem.src = "images/clear.png";
-          temperature.innerHTML = json["main"]["temp"];
+          temperature.innerHTML = `${json["main"]["temp"]}`;
           container.style.height = "400px";
           weatherDetail.classList.add("fadeIn");
           weatherBox.classList.add("fadeIn");
