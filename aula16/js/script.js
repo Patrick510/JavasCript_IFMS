@@ -7,7 +7,7 @@ const error404 = document.querySelector(".not-found");
 search.addEventListener("click", () => {
   console.log("carregar dados");
 
-  const APIKey = "6798be00aca7b5ad944f1bcb1bb4b30b";
+  const APIKey = "6798be00aca7b5ad944f1bcb  1bb4b30b";
   const city = document.querySelector(".search-box input").value;
 
   if (city === "") return;
@@ -18,9 +18,9 @@ search.addEventListener("click", () => {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
-      console.log(json.weather[0].description);
-      console.log(json["main"]["temp"]);
-      if (json.cod === "404") {
+      //console.log(json.weather[0].description);
+      //console.log(json["main"]["temp"]);
+      if (json.cod === "404" || json.cod === "401") {
         container.style.height = "400px";
         weatherBox.style.display = "none";
         weatherDetail.style.display = "none";
@@ -31,43 +31,33 @@ search.addEventListener("click", () => {
         const imagem = document.getElementById("imagem");
         const temperature = document.getElementById("temperature");
         const description = document.getElementById("description");
+        const humidity = document.getElementById("humidity");
+        const wind_speed = document.getElementById("wind_speed");
 
         if (json.weather[0].description === "overcast clouds") {
+          error404.style.display = "none";
           imagem.src = "images/cloud.png";
-          temperature.innerHTML = json["main"]["temp"];
-          container.style.height = "400px";
+          temperature.innerHTML = `${parseInt(json["main"]["temp"])}°`;
+          description.innerHTML = `${json.weather[0].description}`;
+          humidity.innerHTML = `${json["main"]["humidity"]} `;
+          wind_speed.innerHTML = `${json["wind"]["speed"]} Km/h`;
+          container.style.height = "500px";
           weatherBox.style.display = "none";
           weatherBox.style.display = "block";
           weatherBox.classList.add("fadeIn");
+          weatherDetail.classList.add("fadeIn");
         }
         if (json.weather[0].description === "clear sky") {
           imagem.src = "images/clear.png";
-          temperature.innerHTML = json["main"]["temp"];
-          console.log(dados["main"]);
-          container.style.height = "400px";
-          weatherDetail.classList.add("fadeIn");
+          temperature.innerHTML = `${parseInt(json["main"]["temp"])}°`;
+          description.innerHTML = `${json.weather[0].description}`;
+          humidity.innerHTML = `${json["main"]["humidity"]}% `;
+          wind_speed.innerHTML = `${json["wind"]["speed"]} Km/h`;
+          container.style.height = "500px";
+          weatherBox.style.display = "none";
+          weatherBox.style.display = "block";
           weatherBox.classList.add("fadeIn");
-        }
-        if (json.weather[0].description === "few clouds") {
-          imagem.src = "images/clear.png";
-          temperature.innerHTML = json["main"]["temp"];
-          container.style.height = "400px";
           weatherDetail.classList.add("fadeIn");
-          weatherBox.classList.add("fadeIn");
-        }
-        if (json.weather[0].description === "broken clouds") {
-          imagem.src = "images/clear.png";
-          temperature.innerHTML = json["main"]["temp"];
-          container.style.height = "400px";
-          weatherDetail.classList.add("fadeIn");
-          weatherBox.classList.add("fadeIn");
-        }
-        if (json.weather[0].description === "scattered clouds") {
-          imagem.src = "images/clear.png";
-          temperature.innerHTML = `${json["main"]["temp"]}`;
-          container.style.height = "400px";
-          weatherDetail.classList.add("fadeIn");
-          weatherBox.classList.add("fadeIn");
         }
       }
     });
