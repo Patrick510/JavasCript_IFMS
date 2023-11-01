@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR-CODE GENERATOR</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <section>
-        <div class="container">
-            <div class="row">
-                <input type="color" class="light" name="" id="switch">
-                <input type="color" class="dark" name="" id="switch">
+      <div class="container">
+        <div class="row">
+          <input type="color" class="light" id="switch" value="#fff" />
+          <input type="color" class="dark" id="switch" value="#000" />
 
-                <select class="sizes" name="" id="">
-                    <option value="100">100x100</option>
-                    <option value="200">200x200</option>
-                    <option value="300">300x300</option>
-                    <option value="400">400x400</option>
-                    <option value="500">500x500</option>
-                    <option value="600">600x600</option>
-                    <option value="700">700x700</option>
-                    <option value="800">800x800</option>
-                    <option value="900">900x900</option>
-                    <option value="1000">1000x1000</option>
-                </select>
-            </div>
-            <input type="text" name="" id="" class="qr-text" placeholder="Enter QR Text">
-
-            <div id="qr-code"> <img src="image/qr-code.png" alt=""></div>
-
-            <div class="action-container">
-                <button class="act-butt">
-                    Download <i class="fas fa-download"></i>
-                </button>
-                <button class="act-butt">
-                    Share <i class="fas fa-share"></i>
-                </button>
-            </div>
+          <select class="sizes">
+            <option value="100">100x100</option>
+            <option value="200">200x200</option>
+            <option value="300">300x300</option>
+            <option value="400">400x400</option>
+            <option value="500">500x500</option>
+            <option value="600">600x600</option>
+            <option value="700">700x700</option>
+            <option value="800">800x800</option>
+            <option value="900">900x900</option>
+            <option value="1000">1000x1000</option>
+          </select>
         </div>
+        <input type="text" class="qr-text" placeholder="Enter QR Text" />
+
+        <div class="action-container">
+          <a href="#" download="QRCode"  class="act-butt" id="download-btn">
+            Download <i class="fas fa-download"></i>
+          </a>
+          <a class="act-butt" id="share-btn">Share <i class="fas fa-share"></i></a>
+        </div>
+
+        <div id="qr-code" ></div>
+      </div>
     </section>
-</body>
+  </body>
+
+  <script src="js/script.js"></script>
+
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 </html>
