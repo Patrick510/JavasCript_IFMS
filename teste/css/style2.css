@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  /* Adicione estilos para o contêiner, se desejar */
+}
+
+.widget {
+  background-color: #3498db; /* Cor de fundo do widget */
+  color: #ffffff; /* Cor do texto do widget */
+  padding: 10px 20px; /* Espaçamento interno do widget */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 18px; /* Tamanho do texto */
+  font-weight: bold; /* Negrito */
+}
